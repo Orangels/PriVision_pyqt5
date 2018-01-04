@@ -9,18 +9,14 @@ Computer Vision Interactive Platform based on PyQt by priv Lab
 
     `git clone https://github.com/soeaver/pypriv.git` 
     
-and modify line 13 
+2. and modify line 13 of `pypriv/nnutils/caffeutils.py` to `/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python`
 
-`pypriv/nnutils/caffeutils.py` 
-
-to cfg.GLOBAL.CAFFE_ROOT (`/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python`)
-
-2. install pyqt4:
+3. install pyqt4:
     `sudo apt-get install pyqt4-dev-tools`
 and darkstyle:
     `pip install qdarkstyle`
 
-3. install python dependence：
+4. install python dependence：
 `numpy>=1.13.2`
 `scipy>=0.13.3`
 `Pillow>=4.3.0`
