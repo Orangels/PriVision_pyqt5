@@ -1,14 +1,13 @@
 # -*- coding:utf8 -*-
 import sys
+from config import cfg
 
-sys.path.append('/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python')
-sys.path.append('/home/user/workspace/openpose-priv-dev/3rdparty/lib/priv_tools')
+sys.path.append(cfg.GLOBAL.CAFFE_ROOT)
 
 import caffe
 import label_info
 from inference import Detector
 from common import objs_sort_by_center
-from config import cfg
 
 
 class FaceDetector:
