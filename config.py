@@ -9,10 +9,18 @@ cfg = __C
 __C.GLOBAL = edict()
 __C.GLOBAL.CAFFE_ROOT = '/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python'
 __C.GLOBAL.OPENPOSE_ROOT = '/home/user/workspace/openpose-priv-dev'
+__C.GLOBAL.IM_SHOW_SIZE = (960, 640)
+__C.GLOBAL.VIDEO1 = './files/news.avi'
+__C.GLOBAL.VIDEO2 = './files/shanxi_traffic/0500320.avi'
+__C.GLOBAL.VIDEO3 = './files/shanxi_traffic/0500320.avi'
 __C.GLOBAL.F_MODEL1 = False
 __C.GLOBAL.F_MODEL2 = False
 __C.GLOBAL.F_MODEL3 = False
 __C.GLOBAL.F_MODEL4 = False
+__C.GLOBAL.SAVE_VIDEO_PATH = './files/save'
+__C.GLOBAL.SAVE_VIDEO_MAX_SECOND = 1800 * 20
+__C.GLOBAL.SAVE_VIDEO_FPS = 20
+__C.GLOBAL.SAVE_VIDEO_SIZE = (960, 540)
 
 __C.ICONS = edict()
 __C.ICONS.LOGO = cur_pth + '/icons/pose_icon.png'
@@ -52,7 +60,6 @@ __C.ObjDet.WEIGHTS = cur_pth + \
                      '/models/rfcn_coco_air152_ms-ohem-multigrid-deformpsroi-multicontext_iter_850000.caffemodel'
 __C.ObjDet.PIXEL_MEANS = (103.52, 116.28, 123.675)
 __C.ObjDet.PIXEL_STDS = (57.375, 57.12, 58.395)
-
 
 __C.PersonDet = edict()
 __C.PersonDet.DEPLOY = cur_pth + '/models/deploy_rfcn_cocoperson_se-resnet50-hik-merge-ohem-multigrid.prototxt'
