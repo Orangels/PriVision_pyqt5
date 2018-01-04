@@ -3,7 +3,7 @@ Computer Vision Interactive Platform based on PyQt by priv Lab
 
 
 ## Install
-* **Environment:** [**`py-RFCN-priv`**](https://github.com/soeaver/py-RFCN-priv), [**`openpose`**](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [**`PyOpenPose`**](https://github.com/FORTH-ModelBasedTracker/PyOpenPose)
+* **Environment:** [**`py-RFCN-priv`**](https://github.com/soeaver/py-RFCN-priv), [**`openpose`**](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [**`PyOpenPose`**](https://github.com/FORTH-ModelBasedTracker/PyOpenPose), [**`pypriv`**](https://github.com/soeaver/pypriv)
 
 1. install pyqt4:
     `sudo apt-get install pyqt4-dev-tools`
