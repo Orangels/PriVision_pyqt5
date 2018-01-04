@@ -7,7 +7,7 @@ __C = edict()
 cfg = __C
 
 __C.GLOBAL = edict()
-__C.GLOBAL.Caffe_root = '/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python'
+__C.GLOBAL.CAFFE_ROOT = '/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python'
 __C.GLOBAL.F_MODEL1 = False
 __C.GLOBAL.F_MODEL2 = False
 __C.GLOBAL.F_MODEL3 = False
