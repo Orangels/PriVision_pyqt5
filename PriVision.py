@@ -2,9 +2,9 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import qdarkstyle
 import sys
-from mainwindow_privison import MainWindow
+from mainwindow_privision import MainWindow
 
-__appname__ = 'PriVison'
+__appname__ = 'PriVision'
 
 
 def main(argv):
