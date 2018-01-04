@@ -2,11 +2,6 @@
 from __future__ import print_function
 import sys
 
-sys.path.append('/home/user/workspace/openpose-priv-dev/3rdparty/lib/priv_tools')
-
-from common import draw_bbox, draw_fancybbox, draw_pose_kpts, draw_mask, clock, draw_str, draw_kpts
-from label_info import COLORMAP21, COLORMAP19, COLORMAP20, WHITE19, LINK_PAIR
-
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
@@ -40,21 +35,15 @@ from libs.toolbar import *
 from libs.canvas import *
 from libs.zoomwidget import *
 from libs.cameradevice import *
-
-# from libs.objdetector import *
-#from libs.persondetector import *
-#from libs.trafficdetector import *
-#from libs.poseestimator import *
-#from libs.facedetector import *
-#from libs.facealign import *
-#from libs.facerecog import *
 from modules.facedetector import *
+from pypriv.tools.visualize import *
+from pypriv import variable as V
 
 from mainwindow_ui import Ui_MainWindow
 
 
 class GetImage:
-    def __init__(self):
+    def __init__(self, gpu_id=0):
         pass
 
     def __call__(self, img):
@@ -72,7 +61,7 @@ task4_out = Queue(2)
 
 
 def Task1_process(msg_in, msg_out):
-    Worker1 = PersonDetector(gpu_id=1, fastface=False)
+    Worker1 = FaceDetector(gpu_id=1)
     while True:
         if not msg_in.empty():
             frame = msg_in.get()
@@ -81,7 +70,7 @@ def Task1_process(msg_in, msg_out):
 
 
 def Task2_process(msg_in, msg_out):
-    Worker2 = PersonEstimator()
+    Worker2 = GetImage()
     while True:
         if not msg_in.empty():
             frame = msg_in.get()
@@ -90,7 +79,7 @@ def Task2_process(msg_in, msg_out):
 
 
 def Task3_process(msg_in, msg_out):
-    Worker3 = TrafficDetector(gpu_id=2)
+    Worker3 = GetImage(gpu_id=2)
     # Worker3 = FaceAlign(gpu_id=2)
     while True:
         if not msg_in.empty():
@@ -100,7 +89,7 @@ def Task3_process(msg_in, msg_out):
 
 
 def Task4_process(msg_in, msg_out):
-    Worker4 = FaceRecog(gpu_id=3)
+    Worker4 = GetImage(gpu_id=3)
     while True:
         if not msg_in.empty():
             frame = msg_in.get()
@@ -231,7 +220,7 @@ class MainWindow(QMainWindow):
         # task special param
         self.image_render = GetImage()
         self.flag_savevideo = False
-        self.info_header = u"您好! 欢迎您试用PriVision!\n  "
+        self.info_header = u"Hello! Welcome from PriVision!\n  "
         self.shown_info(self.info_header)
         self.allframes = []
         self.video_writer = None
@@ -473,12 +462,12 @@ class MainWindow(QMainWindow):
             vis = draw_fancybbox(vis, result1)
         if result2 is not None:
             if cfg.GLOBAL.F_MODEL3:
-                vis = draw_pose_kpts(vis, result2, WHITE19, LINK_PAIR)
+                vis = draw_pose_kpts(vis, result2, V.COLORMAP19, V.POSE19_LINKPAIR)
             else:
-                vis = draw_pose_kpts(vis, result2, COLORMAP19, LINK_PAIR)
+                vis = draw_pose_kpts(vis, result2, V.COLORMAP19, V.POSE19_LINKPAIR)
         if result3 is not None:
             vis = draw_fancybbox(vis, result3)
-            # vis = draw_kpts(vis, result3)
+            # vis = draw_face68_kpts(vis, result3)
         if result4 is not None:
             vis = draw_fancybbox(vis, result4, attri=True)
         dt = clock() - t
