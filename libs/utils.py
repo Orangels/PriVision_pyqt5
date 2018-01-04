@@ -8,10 +8,8 @@ import numpy as np
 import cv2
 import os, inspect
 from contextlib import contextmanager
-import matplotlib.pyplot as plt
 import itertools as it
 from PIL import Image
-import math
 
 image_extensions = ['.bmp', '.jpg', '.jpeg', '.png', '.tif', '.tiff', '.pbm', '.pgm', '.ppm']
 from PIL import Image, ImageDraw, ImageFont
