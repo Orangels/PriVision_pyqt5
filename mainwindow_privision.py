@@ -38,7 +38,7 @@ from libs.cameradevice import *
 from libs.utils import *
 
 from modules.poseestimator import *
-from modules.facedetector import *
+from modules.persondetector import *
 from modules.objdetector import *
 from modules.trafficdetector import *
 from pypriv.tools.visualize import *
@@ -75,7 +75,7 @@ def Task1_process(msg_in, msg_out):
 
 
 def Task2_process(msg_in, msg_out):
-    Worker2 = FaceDetector(gpu_id=1)
+    Worker2 = PersonDetector(gpu_id=1)
     while True:
         if not msg_in.empty():
             frame = msg_in.get()
@@ -311,7 +311,7 @@ class MainWindow(QMainWindow):
             fourcc = cv2.VideoWriter_fourcc(*'MJPG')
             self.video_writer = cv2.VideoWriter('{}/{}_save.avi'.format(cfg.GLOBAL.SAVE_VIDEO_PATH, video_name), fourcc,
                                                 cfg.GLOBAL.SAVE_VIDEO_FPS,
-                                                cfg.GLOBAL.SAVE_VIDEO_SIZE)
+                                                tuple(cfg.GLOBAL.SAVE_VIDEO_SIZE))
             self.ui.record_bn.setIcon(QIcon(cfg.ICONS.LEFT_TOP3.replace('bright', 'color')))
         else:
             self.video_writer.release()
@@ -412,7 +412,7 @@ class MainWindow(QMainWindow):
         self.adjustScale()
 
         frame = np.asarray(frame[:, :])
-        frame = cv2.resize(frame, cfg.GLOBAL.IM_SHOW_SIZE)
+        frame = cv2.resize(frame, tuple(cfg.GLOBAL.IM_SHOW_SIZE))
         self.allframes.append(frame)
         vis = frame.copy()
 
@@ -475,7 +475,7 @@ class MainWindow(QMainWindow):
         dt = clock() - t
 
         if self.flag_savevideo and self.savevideo_counting <= self.savevideo_max:
-            save_im = cv2.resize(vis, cfg.GLOBAL.SAVE_VIDEO_SIZE)
+            save_im = cv2.resize(vis, tuple(cfg.GLOBAL.SAVE_VIDEO_SIZE))
             self.video_writer.write(save_im)
             self.savevideo_counting += 1
         elif self.savevideo_counting > self.savevideo_max:
@@ -493,7 +493,7 @@ class MainWindow(QMainWindow):
             cur_info += u'--------------------\n  '
             self.shown_info(cur_info)
 
-        vis = cv2.resize(vis, cfg.GLOBAL.IM_SHOW_SIZE)
+        vis = cv2.resize(vis, tuple(cfg.GLOBAL.IM_SHOW_SIZE))
         image = QImage(vis.tostring(), vis.shape[1], vis.shape[0], QImage.Format_RGB888).rgbSwapped()
 
         self.canvas.update_image(image)
