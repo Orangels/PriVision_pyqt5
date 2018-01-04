@@ -77,6 +77,16 @@ __C.PersonDet.PIXEL_MEANS = (104.0, 117.0, 123.0)
 __C.PersonDet.PIXEL_STDS = (58.82, 58.82, 58.82)
 
 
+# person_segmentation
+__C.PersonSeg = edict()
+__C.PersonSeg.DEPLOY = cur_pth + '/models/person_segmentation/' \
+                                 'deploy_deeplabv3_se-resnet50-hik-384-16sbn-merge.prototxt'
+__C.PersonSeg.WEIGHTS = cur_pth + '/models/person_segmentation/' \
+                                  'deeplabv3_se-resnet50_ppp_iter_20000.caffemodel'
+__C.PersonSeg.PIXEL_MEANS = (104.0, 117.0, 123.0)
+__C.PersonSeg.PIXEL_STDS = (58.82, 58.82, 58.82)
+
+
 # face_detection
 __C.FaceDet = edict()
 __C.FaceDet.DEPLOY = cur_pth + '/models/face_detection/' \
