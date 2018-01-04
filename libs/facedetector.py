@@ -18,7 +18,7 @@ class FaceDetector:
 
         self.D = Detector(det_net, mean=cfg.FaceDet.PIXEL_MEANS, std=cfg.FaceDet.PIXEL_STDS,
                           scales=(480,), max_sizes=(800,), preN=500, postN=50, conf_thresh=0.7,
-                          color_map={0: [192, 0, 192], 1: [255, 64, 64]}, class_map=label_info.FACE_CLASS)
+                          color_map={0: [192, 0, 192], 1: [255, 64, 64]}, class_map=V.FACE_CLASS)
 
     def __call__(self, img):
         objs = self.D.det_im(img)
