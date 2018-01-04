@@ -42,12 +42,13 @@ from libs.zoomwidget import *
 from libs.cameradevice import *
 
 # from libs.objdetector import *
-from libs.persondetector import *
-from libs.trafficdetector import *
-from libs.poseestimator import *
+#from libs.persondetector import *
+#from libs.trafficdetector import *
+#from libs.poseestimator import *
 #from libs.facedetector import *
 #from libs.facealign import *
-from libs.facerecog import *
+#from libs.facerecog import *
+from modules.facedetector import *
 
 from mainwindow_ui import Ui_MainWindow
 
