@@ -9,9 +9,6 @@ import cv2
 import os, inspect
 from contextlib import contextmanager
 import itertools as it
-from PIL import Image
-
-image_extensions = ['.bmp', '.jpg', '.jpeg', '.png', '.tif', '.tiff', '.pbm', '.pgm', '.ppm']
 
 this_file = inspect.getfile(inspect.currentframe())
 file_pth = os.path.abspath(os.path.dirname(this_file))
