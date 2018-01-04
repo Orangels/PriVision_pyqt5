@@ -5,8 +5,8 @@ from config import cfg
 sys.path.append(cfg.GLOBAL.CAFFE_ROOT)
 
 import caffe
-import label_info
-from inference import Detector
+from pypriv.nnutils.caffeutils import Detector
+from pypriv import variable as V
 from common import objs_sort_by_center
 
 
