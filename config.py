@@ -8,10 +8,37 @@ cfg = __C
 
 __C.GLOBAL = edict()
 __C.GLOBAL.CAFFE_ROOT = '/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python'
+__C.GLOBAL.OPENPOSE_ROOT = '/home/user/workspace/openpose-priv-dev'
 __C.GLOBAL.F_MODEL1 = False
 __C.GLOBAL.F_MODEL2 = False
 __C.GLOBAL.F_MODEL3 = False
 __C.GLOBAL.F_MODEL4 = False
+
+__C.ICONS = edict()
+__C.ICONS.LOGO = cur_pth + '/icons/pose_icon.png'
+__C.ICONS.BACKGROUND = cur_pth + '/icons/back_large.jpg'
+# top
+__C.ICONS.TOP_SIZE = (110, 20)
+__C.ICONS.TOP_LEFT1 = cur_pth + '/icons/icon-top/realtime-mode-bright.png'
+__C.ICONS.TOP_LEFT2 = cur_pth + '/icons/icon-top/playback1-bright.png'
+__C.ICONS.TOP_LEFT3 = cur_pth + '/icons/icon-top/playback2-bright.png'
+__C.ICONS.TOP_LEFT4 = cur_pth + '/icons/icon-top/picture-mode-bright.png'
+__C.ICONS.TOP_LEFT5 = cur_pth + '/icons/icon-top/loading-mode-bright.png'
+# left
+__C.ICONS.LEFT_SIZE = (110, 70)
+__C.ICONS.LEFT_TOP1 = cur_pth + '/icons/icon-left/play-bright.png'
+__C.ICONS.LEFT_TOP2 = cur_pth + '/icons/icon-left/pause-bright.png'
+__C.ICONS.LEFT_TOP3 = cur_pth + '/icons/icon-left/record-bright.png'
+__C.ICONS.LEFT_TOP4 = cur_pth + '/icons/icon-left/empty-bright.png'
+__C.ICONS.LEFT_TOP5 = cur_pth + '/icons/icon-left/setting-bright.png'
+__C.ICONS.LEFT_TOP6 = cur_pth + '/icons/icon-left/exit.png'
+# right
+__C.ICONS.RIGHT_SIZE = (110, 70)
+__C.ICONS.RIGHT_TOP1 = cur_pth + '/icons/icon-right/human-pose-bright.png'
+__C.ICONS.RIGHT_TOP2 = cur_pth + '/icons/icon-right/human-detection-bright.png'
+__C.ICONS.RIGHT_TOP3 = cur_pth + '/icons/icon-right/object-detection-bright.png'
+__C.ICONS.RIGHT_TOP4 = cur_pth + '/icons/icon-right/road-analysis-bright.png'
+__C.ICONS.RIGHT_TOP5 = cur_pth + '/icons/icon-right/face-recog-bright.png'
 
 __C.ObjDet = edict()
 # fast mode
