@@ -5,9 +5,9 @@ from config import cfg
 sys.path.append(cfg.GLOBAL.CAFFE_ROOT)
 
 import caffe
+from libs.utils import objs_sort_by_center
 from pypriv.nnutils.caffeutils import Detector
 from pypriv import variable as V
-from utils import objs_sort_by_center
 
 
 class FaceDetector:
