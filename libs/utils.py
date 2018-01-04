@@ -12,17 +12,9 @@ import itertools as it
 from PIL import Image
 
 image_extensions = ['.bmp', '.jpg', '.jpeg', '.png', '.tif', '.tiff', '.pbm', '.pgm', '.ppm']
-from PIL import Image, ImageDraw, ImageFont
 
 this_file = inspect.getfile(inspect.currentframe())
 file_pth = os.path.abspath(os.path.dirname(this_file))
-
-FONT10 = ImageFont.truetype(file_pth + '/data/Arial.ttf', 10)
-FONT15 = ImageFont.truetype(file_pth + '/data/Arial.ttf', 15)
-FONT20 = ImageFont.truetype(file_pth + '/data/Arial.ttf', 20)
-FONT30 = ImageFont.truetype(file_pth + '/data/Arial.ttf', 30)
-CVFONT0 = cv2.FONT_HERSHEY_SIMPLEX
-
 
 class Bunch(object):
     def __init__(self, **kw):
