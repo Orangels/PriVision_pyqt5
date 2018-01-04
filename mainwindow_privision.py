@@ -34,7 +34,7 @@ import time
 from functools import partial
 from multiprocessing import Process, Queue
 
-from libs.config import cfg
+import config as cfg
 from libs.lib import *
 from libs.toolbar import *
 from libs.canvas import *
