@@ -5,6 +5,10 @@ Computer Vision Interactive Platform based on PyQt by priv Lab
 ## Install
 * **Environment:** [**`py-RFCN-priv`**](https://github.com/soeaver/py-RFCN-priv), [**`openpose`**](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [**`PyOpenPose`**](https://github.com/FORTH-ModelBasedTracker/PyOpenPose)
 
+1. clone this repository
+
+    `git clone https://github.com/soeaver/PriVision.git` 
+    
 1. clone [**`pypriv`**](https://github.com/soeaver/pypriv)
 
     `git clone https://github.com/soeaver/pypriv.git` 
