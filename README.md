@@ -15,8 +15,8 @@ Computer Vision Interactive Platform based on PyQt by priv Lab
     
 2. and modify line 13 of `pypriv/nnutils/caffeutils.py` to `/home/user/workspace/openpose-priv-dev/3rdparty/caffe/python`
 
-3. install pyqt4:
-    `sudo apt-get install pyqt4-dev-tools`
+3. install pyqt5:
+    
 and darkstyle:
     `pip install qdarkstyle`
 
